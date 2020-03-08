@@ -24,8 +24,10 @@ Import this library into your own Android Studio project
 ========================================================
 The first step is to prepeare your Android Studio's 'build.gradle' files (Project level and module level).
 
-<b>Project level:</b>
+<b>Project level</b>
+
 Insert the folowing line in 'allprojects':
+
     maven { url 'https://jitpack.io' }
 
 
