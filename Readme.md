@@ -22,4 +22,17 @@ Preview feature.
 
 Import this library into your own Android Studio project
 ========================================================
+The first step is to prepeare your Android Studio's 'build.gradle' files (Project level and module level).
+
+Project level:
+--------------
+Insert:
+
+  allprojects {
+      repositories {
+          <b>maven { url 'https://jitpack.io' }</b>
+          google()
+          jcenter()   
+      }
+  }
 
