@@ -24,15 +24,10 @@ Import this library into your own Android Studio project
 ========================================================
 The first step is to prepeare your Android Studio's 'build.gradle' files (Project level and module level).
 
-Project level:
---------------
-Insert:
+<b>Project level:</b>
+Insert the folowing line in 'allprojects':
+    maven { url 'https://jitpack.io' }
 
-  allprojects {
-      repositories {
-          <b>maven { url 'https://jitpack.io' }</b>
-          google()
-          jcenter()   
-      }
-  }
+
+
 
