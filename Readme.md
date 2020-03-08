@@ -26,9 +26,20 @@ The first step is to prepeare your Android Studio's 'build.gradle' files (Projec
 
 <b>Project level</b>
 
-Insert the folowing line in 'allprojects':
+Insert in 'allprojects' the following line:
 
     maven { url 'https://jitpack.io' }
+    
+   
+<b>Module level (usually your 'app'- module)</b>
+
+Insert in 'dependencies' this line:
+
+    implementation 'com.github.codingbychanche:FileDialogTool:master-SNAPSHOT'
+    
+In the example above the 'SNAPHOT'- tag is used to download the latest version of the code. You should
+check for the latest release under the 'Relase' tab of this repository and use that instead to 
+import a stable release.
 
 
 
