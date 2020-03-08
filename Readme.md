@@ -5,8 +5,8 @@ device and pick file paths for loading or saving data.
 
 An example of how to use this library in your own project can be found here: [Example app mainActivity](app/src/main/java/berthold/filedialog)
 
-Screenshots of the running activity
-===================================
+Screenshots 
+=========== 
 
 ![](2.png)
 
@@ -19,3 +19,7 @@ When called with 'save- file' option, a floatig action button to do so is displa
 ![](1.png)
 
 Preview feature.
+
+Import this library into your own Android Studio project
+========================================================
+
