@@ -29,3 +29,5 @@ proguard/
 ###### OS-specific ######
 # OS X
 .DS_Store
+*~
+*.*~
