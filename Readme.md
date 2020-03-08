@@ -5,7 +5,7 @@ device and pick file paths for loading or saving data.
 
 An example of how to use this library in your own project can be found here: [Example app mainActivity](app/src/main/java/berthold/filedialog)
 
-![](2.png)
+![Example](2.png)
 
 Browsing.
 
