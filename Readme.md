@@ -1,6 +1,6 @@
 File Dialog Tool
 ================
-File Dialog Tool is an activity which allows browsing the file system of your
+<i>File Dialog Tool</i> is an activity which allows to browse through the file system of your
 device and pick file paths for loading or saving data.
 
 An example of how to use this library in your own project can be found here: [Example app mainActivity](app/src/main/java/berthold/filedialog)
@@ -14,15 +14,15 @@ Browsing.
 
 ![](3.png)
 
-When called with 'save- file' option, a floatig action button to do so is displayed. Argument returned will show if just the folder or folder and file was picked.
+When called with 'save- file' option, a floatig action button to do so is displayed. The arguments returned will show if just the folder or folder and file was picked.
 
 ![](1.png)
 
 Preview feature.
 
-Import this library into your own Android Studio project
---------------------------------------------------------
-The first step is to prepeare your Android Studio's 'build.gradle' files (Project level and module level).
+Import this library into your own <i>Android Studio</i> project
+---------------------------------------------------------------
+The first step is to prepare your Android Studio's 'build.gradle' files (Project level and module level). The second step is to allow the permissions needed by the app.
 
 <b>Project level</b>
 
