@@ -26,14 +26,14 @@ The first step is to prepare your Android Studio's 'build.gradle' files (Project
 
 <b>Project level</b>
 
-Insert in 'allprojects' the following line:
+Under 'allprojects' insert the following line:
 
     maven { url 'https://jitpack.io' }
     
    
 <b>Module level (usually your 'app'- module)</b>
 
-Insert in 'dependencies' this line:
+Under 'dependencies' insert this line:
 
     implementation 'com.github.codingbychanche:FileDialogTool:master-SNAPSHOT'
     
