@@ -51,5 +51,11 @@ Add the following permissions to your app's 'manifest'- file:
 Before starting the app for the first time on your device, you need to set the app's permission to access
 internal memory (got to settings => app => permissions).
 
+Add new activity to your manifest file
+--------------------------------------
+Finaly add:
+
+     <activity android:name="berthold.filedialogtool.FileDialog"/>
+
 
 
