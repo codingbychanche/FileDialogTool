@@ -53,7 +53,7 @@ internal memory (got to settings => app => permissions).
 
 Add new activity to your manifest file
 --------------------------------------
-Finaly add:
+Finally add:
 
      <activity android:name="berthold.filedialogtool.FileDialog"/>
 
