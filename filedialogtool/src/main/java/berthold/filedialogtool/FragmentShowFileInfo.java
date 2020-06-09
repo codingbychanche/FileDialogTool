@@ -92,9 +92,7 @@ public class FragmentShowFileInfo extends DialogFragment {
             }
         });
 
-        //filePath=getArguments().getString("filePath");
         filePath=getArguments().getString("filePath");
-        System.out.println("------Fragment Path:"+filePath);
 
         Thread t = new Thread(new Runnable() {
             @Override

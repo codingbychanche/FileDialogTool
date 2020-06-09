@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">File Dialog Tool</string>
+
+    <!-- File Dialog Activity -->
+    <string name="activity_name">Select file</string>
+
+</resources>

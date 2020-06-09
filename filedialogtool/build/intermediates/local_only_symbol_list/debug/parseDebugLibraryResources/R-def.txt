@@ -1,5 +1,9 @@
 R_DEF: Internal format may change without notice
 local
+color colorAccent
+color colorLightGrey
+color colorPrimary
+color colorPrimaryDark
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
 dimen fab_margin
@@ -23,9 +27,10 @@ id progress
 id quit_preview
 id returnAndSave
 id screen_shot
-id show_pricture
+id show_picture
 layout activity_file_chooser
 layout file_list_active_entry
 layout fragment_dialog_show_file_info
 menu menu_file_chooser
+string activity_name
 string app_name

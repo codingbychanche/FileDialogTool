@@ -1,15 +1,4 @@
 /*
- * FileListFillerV5.java
- *
- * Created by Berthold Fritz
- *
- * This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License:
- * https://creativecommons.org/licenses/by-nc-sa/4.0/
- *
- * Last modified 8/27/18 9:13 PM
- */
-
-/*
  * First load and show file names, then add pictures and show them.
  *
  * The file names are loaded and shown faster. After that the progress of loading
@@ -82,7 +71,6 @@ public class FileListFillerV5 extends AsyncTask<String,FileListOneEntry,String> 
      *  Does all the work in the background
      *  Rule! => Never change view elements of the UI- thread from here! Do it in 'onPublish'!
      */
-
     @Override
     protected String doInBackground(String ... params){
 
@@ -90,8 +78,7 @@ public class FileListFillerV5 extends AsyncTask<String,FileListOneEntry,String> 
         tag=FileListFillerV5.class.getSimpleName();
 
         state=JUST_FILENAMES;
-        for (i = 0; i <=fileObjects.length-1; i++) {
-
+        for (File fo:fileObjects){
             if (isCancelled()) break;
 
             // Create row and add to custom list
@@ -99,28 +86,28 @@ public class FileListFillerV5 extends AsyncTask<String,FileListOneEntry,String> 
             // This is the default for files:
             fileSym = BitmapFactory.decodeResource(c.getResources(), R.drawable.document);
 
-            if (fileObjects[i]!=null) {
+            if (fo!=null) {
 
                 // Check if file is a picture...
-                Log.v(tag, "File Object is:" + i + " contains:" + fileObjects[i]);
-                if (isPictureFile.check(fileObjects[i].getName()))
+                if (isPictureFile.check(fo.getName()))
                     fileSym = BitmapFactory.decodeResource(c.getResources(), R.drawable.camera);
 
                 // Check if it is a directory....
-                if (fileObjects[i].isDirectory())
+                if (fo.isDirectory())
                     fileSym = BitmapFactory.decodeResource(c.getResources(), R.drawable.openfolder);
 
                 // Check if file or folder is readable
-                if (!fileObjects[i].canRead() || !fileObjects[i].exists())
+                if (!fo.canRead() || !fo.exists())
                     readable = false;
                 else
                     readable = true;
 
                 // Get File's last modificaton date
-                String d = new Date(new File(fileObjects[i].getAbsolutePath()).lastModified()).toString();
+                String date = new Date(new File(fo.getAbsolutePath()).lastModified()).toString();
 
+                Log.v(tag,"Date "+date);
                 // Add file or folder name to list
-                FileListOneEntry e = new FileListOneEntry(FileListOneEntry.IS_ACTIVE, fileSym, fileObjects[i].getName(), fileObjects[i].getAbsolutePath(), readable, d);
+                FileListOneEntry e = new FileListOneEntry(FileListOneEntry.IS_ACTIVE, fileSym, fo.getName(), fo.getAbsolutePath(), readable, date);
                 publishProgress(e);
             }
         }
@@ -132,7 +119,8 @@ public class FileListFillerV5 extends AsyncTask<String,FileListOneEntry,String> 
         }catch (InterruptedException e){}
 
         state=JUST_PICTURES;
-        for (i=0;i<=fileObjects.length-2;i++){
+        i=0;
+        for (File fo: fileObjects){
 
             // This is important!
             // If you miss to do this here, the class which created
@@ -143,7 +131,7 @@ public class FileListFillerV5 extends AsyncTask<String,FileListOneEntry,String> 
             if (isCancelled()) break;
 
             // If not canceled, go on....
-            if (fileObjects[i]!=null){
+            if (fo!=null){
 
                 FileListOneEntry e=dir.getItem(i);
 
@@ -153,23 +141,25 @@ public class FileListFillerV5 extends AsyncTask<String,FileListOneEntry,String> 
                 // We do this in order to reduce the images memory footprint
                 int sampleSize;
                 metaData.inJustDecodeBounds = true;
-                file=BitmapFactory.decodeFile(fileObjects[i].getAbsolutePath(),metaData);
+                file=BitmapFactory.decodeFile(fo.getAbsolutePath(),metaData);
                 sampleSize=MyBitmapTools.calcSampleSize(metaData.outWidth,metaData.outHeight,200,200);
                 metaData.inSampleSize = sampleSize;
 
                 // Now set sample size and get images data from file
                 metaData.inJustDecodeBounds=false;
-                file=BitmapFactory.decodeFile(fileObjects[i].getAbsolutePath(),metaData);
+                file=BitmapFactory.decodeFile(fo.getAbsolutePath(),metaData);
                 if (file!=null) { // Only if file contains image data
                     // Add bitmap to list view and publish.....
                     e.fileSymbol = file;
                     publishProgress(e);
                 }
             }
+            // ToDo thats a bad hack.....
+            if (i<dir.getCount()-1)
+                i++;
         }
         return "Done";
     }
-
 
     /**
      * Update UI- thread
@@ -185,7 +175,6 @@ public class FileListFillerV5 extends AsyncTask<String,FileListOneEntry,String> 
         if (state==JUST_FILENAMES) {
             dir.add(e[0]);
             p.setProgress(i);
-            Log.v (tag," Filname added.....");
         }
         if (state==JUST_PICTURES){
             dir.notifyDataSetChanged();

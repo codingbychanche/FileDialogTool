@@ -2,7 +2,6 @@
  * A simple file dialog activity.
  *
  */
-
 package berthold.filedialogtool;
 
 import android.content.Context;
@@ -109,7 +108,7 @@ public class FileDialog extends AppCompatActivity {
         savedState=savedInstanceState;
 
         ab=getSupportActionBar();
-        ab.setTitle("Dateiauswahl");
+        ab.setTitle(getString(R.string.activity_name));
 
         // What do you wan't me to do???
         // The string 'myTaskForTodayIs' contains the task to be performed (e.g. 'SAVE_FILE')

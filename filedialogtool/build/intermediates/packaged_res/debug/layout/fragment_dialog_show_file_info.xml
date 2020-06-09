@@ -12,15 +12,15 @@
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/show_pricture"
+    android:id="@+id/show_picture"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="500dp"
     android:layout_centerInParent="true">
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageButton
             android:id="@+id/quit_preview"
@@ -34,10 +34,10 @@
 
             <ImageView
                 android:id="@+id/screen_shot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:layout_height="match_parent"
-                android:layout_width="800dp"
-                android:scaleType="fitCenter"/>
+                android:scaleType="fitCenter" />
             <ProgressBar
                 android:id="@+id/progress"
                 android:layout_centerInParent="true"
@@ -50,26 +50,27 @@
                 android:layout_height="wrap_content">
             </View>
 
-            <LinearLayout
-                android:layout_below="@+id/screen_shot"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
 
-                <ImageButton
-                    android:id="@+id/last_pic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@android:drawable/ic_media_rew"/>
-
-                <ImageButton
-                    android:id="@+id/next_pic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@android:drawable/ic_media_ff"/>
-            </LinearLayout>
 
         </RelativeLayout>
+        <LinearLayout
+            android:layout_below="@+id/screen_shot"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/last_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_media_rew"/>
+
+            <ImageButton
+                android:id="@+id/next_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_media_ff"/>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>
