@@ -10,11 +10,9 @@ Screenshots
 
 ![](2.png)
 
-Browsing.
 
 ![](3.png)
 
-When called with 'save- file' option, a floatig action button to do so is displayed. The arguments returned will show if just the folder or folder and file was picked.
 
 ![](1.png)
 
