@@ -19,6 +19,8 @@ package berthold.filedialogtool;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import androidx.annotation.Nullable;
@@ -34,7 +36,7 @@ public class FragmentShowFileInfo extends DialogFragment {
 
     // UI
     ImageView   screenShoot;
-    View        colorBelowPic;
+    View        backgroundOfFragment;
     Bitmap      pic;
     String      filePath;
     ProgressBar progress;
@@ -77,11 +79,12 @@ public class FragmentShowFileInfo extends DialogFragment {
 
         // Ui
         screenShoot=(ImageView) view.findViewById(R.id.screen_shot);
-        colorBelowPic=(View)view.findViewById(R.id.color_below_pic);
         progress=(ProgressBar) view.findViewById(R.id.progress);
         quit=(ImageButton) view.findViewById(R.id.quit_preview);
-        nextPic=(ImageButton)view.findViewById(R.id.next_pic);
-        lastPic=(ImageButton)view.findViewById(R.id.last_pic);
+        backgroundOfFragment=view;
+
+        //nextPic=(ImageButton)view.findViewById(R.id.next_pic);
+        //lastPic=(ImageButton)view.findViewById(R.id.last_pic);
         final Handler h=new Handler();
 
         // Buttons
@@ -125,13 +128,12 @@ public class FragmentShowFileInfo extends DialogFragment {
 
                         int color=MyBitmapTools.getDominatColorAtTop(pic);
                         int colorBottom=MyBitmapTools.getDominantColorAtBottom(pic);
-                        frag.getView().setBackgroundColor(color);
-                        quit.setBackgroundColor(color);
-                        screenShoot.setBackgroundColor(color);
 
-                        colorBelowPic.setBackgroundColor(colorBottom);
-                        nextPic.setBackgroundColor(colorBottom);
-                        lastPic.setBackgroundColor(colorBottom);
+                        // @rem:This shows how a background gradient can be set programmatically to any view@@
+                        int []colors={color,colorBottom};
+                        GradientDrawable bg=new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM,colors);
+                        backgroundOfFragment.setBackground(bg);
+
                     }
                 });
             }
