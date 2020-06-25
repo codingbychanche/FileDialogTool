@@ -36,11 +36,9 @@ Under 'dependencies' insert this line:
 
     implementation 'com.github.codingbychanche:FileDialogTool:master-SNAPSHOT'
     
-In the example above the 'SNAPHOT'- tag is used to download the latest version of the code. You should
-check for the latest release under the 'Relase' tab of this repository and use that instead to 
-import a stable release.
+In the example above the 'SNAPHOT'- tag is used to download the latest version of the code, which may not be fully tested.
 
-Latest release: [![](https://jitpack.io/v/codingbychanche/FileDialogTool.svg)](https://jitpack.io/#codingbychanche/FileDialogTool)
+Latest stable release: [![](https://jitpack.io/v/codingbychanche/FileDialogTool.svg)](https://jitpack.io/#codingbychanche/FileDialogTool)
 
 
 Permissions
