@@ -1,6 +1,5 @@
 File Dialog Tool
 ================
-[![](https://jitpack.io/v/codingbychanche/FileDialogTool.svg)](https://jitpack.io/#codingbychanche/FileDialogTool)
 
 <i>File Dialog Tool</i> is an activity which allows to browse through the file system of your
 device and pick file paths for loading or saving data.
@@ -40,6 +39,9 @@ Under 'dependencies' insert this line:
 In the example above the 'SNAPHOT'- tag is used to download the latest version of the code. You should
 check for the latest release under the 'Relase' tab of this repository and use that instead to 
 import a stable release.
+
+Latest release: [![](https://jitpack.io/v/codingbychanche/FileDialogTool.svg)](https://jitpack.io/#codingbychanche/FileDialogTool)
+
 
 Permissions
 -----------
