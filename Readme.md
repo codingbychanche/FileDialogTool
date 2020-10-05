@@ -40,6 +40,9 @@ In the example above the 'SNAPHOT'- tag is used to download the latest version o
 
 Latest stable release: [![](https://jitpack.io/v/codingbychanche/FileDialogTool.svg)](https://jitpack.io/#codingbychanche/FileDialogTool)
 
+Min- SDK Version
+----------------
+22
 
 Permissions
 -----------
