@@ -1,6 +1,6 @@
 <resources>
 
     <!-- File Dialog Activity -->
-    <string name="activity_name">Dateiauswahl 1.0</string>
+    <string name="activity_name">Dateiauswahl</string>
 
 </resources>

@@ -40,19 +40,14 @@ In the example above the 'SNAPHOT'- tag is used to download the latest version o
 
 Latest stable release: [![](https://jitpack.io/v/codingbychanche/FileDialogTool.svg)](https://jitpack.io/#codingbychanche/FileDialogTool)
 
+
 Min- SDK Version
 ----------------
 22
 
 Permissions
 -----------
-Add the following permissions to your app's 'manifest'- file:
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
-
-Before starting the app for the first time on your device, you need to set the app's permission to access
-internal memory (got to settings => app => permissions).
+When started a dialog is opened asking for the required permission.
 
 Add new activity to your manifest file
 --------------------------------------
