@@ -125,10 +125,14 @@ public class FileDialog extends AppCompatActivity {
 
         // Create list view
         myListView=(ListView)findViewById(R.id.mylist);
-
         ArrayList<FileListOneEntry> dir=new ArrayList<>();       // Array containing the current path's dir
         myListAdapter=new FileListAdapter(this,dir);
         myListView.setAdapter(myListAdapter);
+
+        // Ask for permissions
+        String[] perms = {"android.permission.READ_EXTERNAL_STORAGE"};
+        int permsRequestCode = 200;
+        requestPermissions(perms, permsRequestCode); // Opens dialog asking for permissions.
 
         // Get current path from calling activity
         if(extra.get("path")!=null) root=extra.get("path").toString();

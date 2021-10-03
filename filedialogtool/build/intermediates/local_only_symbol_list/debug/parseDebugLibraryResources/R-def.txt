@@ -29,4 +29,3 @@ layout file_list_active_entry
 layout fragment_dialog_show_file_info
 menu menu_file_chooser
 string activity_name
-string app_name
