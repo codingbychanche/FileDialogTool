@@ -105,7 +105,6 @@ public class FileDialog extends AppCompatActivity {
      *
      * @param savedInstanceState
      */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,7 +137,6 @@ public class FileDialog extends AppCompatActivity {
         if (extra.get("path") != null) root = extra.get("path").toString();
         if (extra.get(OVERRIDE_LAST_PATH_VISITED) != null) {
             overrideLastPathVisited = extra.getBoolean(OVERRIDE_LAST_PATH_VISITED);
-            Log.v("COOSER", "--" + overrideLastPathVisited);
         }
         // If previously a path was saved, get it and use passed path as default.
         // This is convenient for the user because he always returns to the folder he
@@ -217,7 +215,6 @@ public class FileDialog extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         if (task != null) task.cancel(true);
-        Log.v("Main", "ONPAUSEEEEEEE--------" + currentPath + "  " + task);
     }
 
     @Override
@@ -226,7 +223,6 @@ public class FileDialog extends AppCompatActivity {
         if (savedState != null) currentPath = new File(savedState.getString("path"));
         // Display current path
         ab.setSubtitle(currentPath.toString());
-        Log.v("Main", "ONRESUME----------" + currentPath + "  " + task);
         refreshFiles(currentPath, myListAdapter);
     }
 
@@ -238,7 +234,6 @@ public class FileDialog extends AppCompatActivity {
      * This makes shure, that, even if the bacl- button was pressed
      * file picker is finished via it's on finish method....
      */
-
     @Override
     public void onBackPressed() {
         lastPathVisited = currentPath.toString();
@@ -251,7 +246,6 @@ public class FileDialog extends AppCompatActivity {
      * @param menu
      * @since 7/2017
      */
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -308,7 +302,6 @@ public class FileDialog extends AppCompatActivity {
     /**
      * Leave activity
      */
-
     public void finishIt() {
         task.cancel(true);
 
